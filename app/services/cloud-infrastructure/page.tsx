@@ -310,8 +310,9 @@ const services = [
 const caseStudies = [
   {
     tags: ["Cloud", "Data Center", "Uptime"],
+    metric: "99.99% sustained uptime",
     headline:
-      "99.99% Uptime Achieved Through Tier-3 Data Center Modernization",
+      "Enabled through Tier-3 data center modernization and continuous infrastructure monitoring.",
     gradient: "from-[#0B1F3A] via-[#1447E6] to-[#3B6EF0]",
     icon: (
       <svg className="w-16 h-16 text-white/30" viewBox="0 0 24 24" fill="currentColor">
@@ -321,8 +322,9 @@ const caseStudies = [
   },
   {
     tags: ["Cloud", "Automation", "Gov-Tech"],
+    metric: "96% Faster Citizen Processing",
     headline:
-      "96% Faster Citizen Processing Enabled by Cloud-Based Municipal Automation",
+      "AI-ready cloud-native warehouse modernization enabling real-time analytics at scale.",
     gradient: "from-[#6366F1] via-[#818CF8] to-[#A5B4FC]",
     icon: (
       <svg className="w-16 h-16 text-white/30" viewBox="0 0 24 24" fill="currentColor">
@@ -332,8 +334,9 @@ const caseStudies = [
   },
   {
     tags: ["Infrastructure", "Cost", "Private Cloud"],
+    metric: "38% Infrastructure Cost Optimization",
     headline:
-      "38% Infrastructure Cost Reduction Delivered via Private Cloud Transformation",
+      "Infrastructure transformation reducing operational cost while improving performance elasticity.",
     gradient: "from-[#0F766E] via-[#14B8A6] to-[#5EEAD4]",
     icon: (
       <svg className="w-16 h-16 text-white/30" viewBox="0 0 24 24" fill="currentColor">
@@ -362,14 +365,13 @@ function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
         <h1
-          className={`${GeistSans.className} text-black font-semibold tracking-tight text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl mx-auto`}
+          className={`${GeistSans.className} text-black font-semibold tracking-tight text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl mx-auto`}
         >
-          Adaptive Cloud &amp; Infrastructure for Resilient Enterprises
+          Cloud &amp; Infrastructure — Built for AI Ambitions
         </h1>
 
         <p className="text-gray-500 text-base lg:text-lg mt-6 max-w-xl mx-auto leading-relaxed">
-          Building secure &amp; compliant cloud foundations that simply adapt
-          and evolve.
+          Deploy AI faster with cloud infrastructure designed for real operational requirements.
         </p>
       </div>
     </section>
@@ -380,30 +382,14 @@ function HeroSection() {
    SECTION 1.5 — STATS BANNER
    ================================================================ */
 
-const stats = [
-  { value: "20%", label: "Improvement In Case Tracking Efficiency" },
-  { value: "35%", label: "Reduction In Patient Wait Times" },
-  { value: "3×", label: "Faster Identification, Lowering Rehospitalizations" },
-];
-
 function StatsBanner() {
   return (
-    <section className="bg-[#1447E6]/70">
+    <section className="bg-[#0B1F3A]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-7 lg:py-9">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 text-center">
-          {stats.map((stat) => (
-            <div key={stat.value} className="flex flex-col items-center">
-              <span
-                className={`${GeistSans.className} text-white font-bold text-2xl md:text-3xl lg:text-[38px] tracking-tight`}
-              >
-                {stat.value}
-              </span>
-              <span className="text-white/70 text-xs md:text-sm mt-2 max-w-[260px] leading-relaxed italic">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
+        <p className="text-white text-sm md:text-base lg:text-lg text-center max-w-4xl mx-auto leading-relaxed">
+          AI-ready enterprises require more than scalable compute. They require cloud infrastructure engineered
+          to sense disruption, respond autonomously, and optimize continuously.
+        </p>
       </div>
     </section>
   );
@@ -416,9 +402,25 @@ function StatsBanner() {
 type RingKey = "foundation" | "loop" | "outcomes";
 
 const callouts: { key: RingKey; label: string; items: string[] }[] = [
-  { key: "foundation", label: "Secure Digital Foundation", items: frameworkData[0].items },
-  { key: "loop", label: "Adaptive Loop", items: frameworkData[1].items },
-  { key: "outcomes", label: "Outcomes", items: frameworkData[2].items },
+  {
+    key: "foundation",
+    label: "Secure Digital Foundation",
+    items: frameworkData[0].items,
+  },
+  {
+    key: "loop",
+    label: "Adaptive Loop",
+    items: frameworkData[1].items,
+  },
+  {
+    key: "outcomes",
+    label: "Outer Circle \u2013 Productized Solutions",
+    items: [
+      "Citizen Services Automation Platform",
+      "Spend Analytics / Cost Intelligence Platform",
+      "Customer Onboarding & Risk Assessment Platform",
+    ],
+  },
 ];
 
 function FrameworkSection() {
@@ -439,9 +441,11 @@ function FrameworkSection() {
         <h2
           className={`${GeistSans.className} text-black font-semibold tracking-tight text-2xl md:text-3xl lg:text-4xl leading-tight max-w-3xl`}
         >
-          Our framework turns foundational cloud infra into connected feedback
-          systems that improve over time
+          Traditional infrastructure reacts to disruption. Adaptive infrastructure anticipates it.
         </h2>
+        <p className="text-gray-500 text-sm md:text-base mt-4 max-w-2xl">
+          Our framework turns foundational cloud infra into connected feedback systems that improve over time.
+        </p>
 
         {/* 3-column layout: left callouts | center circles | right callout */}
         <div className="mt-16 lg:mt-20 flex flex-col lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-12 xl:gap-16 items-center">
@@ -683,16 +687,19 @@ function ServicesGrid() {
     <section className="bg-gradient-to-b from-[#EEF2FF] via-[#E8EEFF] to-[#F0F4FF] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <h2
-          className={`${GeistSans.className} text-black font-semibold tracking-tight text-2xl md:text-3xl lg:text-4xl text-center mb-14 lg:mb-16`}
+          className={`${GeistSans.className} text-black font-semibold tracking-tight text-2xl md:text-3xl lg:text-4xl text-center`}
         >
           Cognitive Cloud &amp; Infrastructure Services
         </h2>
+        <p className="text-gray-500 text-sm md:text-base mt-4 mb-12 text-center max-w-2xl mx-auto leading-relaxed">
+          Adaptive systems are not assembled. They are architected across cloud, network, security, and data layers.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((svc) => (
             <div
               key={svc.title}
-              className="bg-white border border-gray-200 rounded-xl p-7 lg:p-8 hover:shadow-md hover:border-gray-300 transition-all duration-200"
+              className="space-y-3"
             >
               <div className="flex items-center gap-3 mb-1.5">
                 <div className="w-10 h-10 rounded-lg bg-[#1447E6]/10 flex items-center justify-center text-[#1447E6] shrink-0">
@@ -704,10 +711,7 @@ function ServicesGrid() {
                   {svc.title}
                 </h3>
               </div>
-              <p className="text-gray-400 text-xs mb-5 leading-relaxed pl-[52px]">
-                {svc.descriptor}
-              </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 pl-[52px]">
                 {svc.bullets.map((bullet) => (
                   <li
                     key={bullet}
@@ -772,7 +776,16 @@ function CaseStudies() {
                 <h3
                   className={`${GeistSans.className} text-black font-semibold text-sm lg:text-base leading-snug`}
                 >
-                  {cs.headline}
+                  {cs.metric ? (
+                    <>
+                      <span className="text-[#1447E6]">{cs.metric}</span>
+                      <span className="block text-gray-900 text-xs lg:text-sm mt-1 font-normal">
+                        {cs.headline}
+                      </span>
+                    </>
+                  ) : (
+                    cs.headline
+                  )}
                 </h3>
               </div>
             </div>
@@ -802,7 +815,7 @@ function FinalCTA() {
 
           <div className="relative z-10">
             <h2
-              className={`${GeistSans.className} text-[#0B1F3A] font-bold tracking-tight text-2xl md:text-3xl lg:text-4xl leading-tight max-w-2xl mx-auto mb-10`}
+              className={`${GeistSans.className} text-[#0B1F3A] font-bold tracking-tight text-xl md:text-2xl lg:text-3xl leading-tight max-w-2xl mx-auto mb-10`}
             >
               Let&apos;s design a secure &amp; adaptive cloud infrastructure that keeps you resilient, no matter what changes next
             </h2>
